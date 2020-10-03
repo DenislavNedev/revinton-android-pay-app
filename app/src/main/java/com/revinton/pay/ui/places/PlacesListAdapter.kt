@@ -8,7 +8,7 @@ import com.revinton.pay.R
 import com.revinton.pay.databinding.ItemPlaceLayoutBinding
 import com.revinton.pay.utils.DataBoundListAdapter
 
-class PlacesListAdapter :
+class PlacesListAdapter(private val presenter: ItemPlacePresenter) :
     DataBoundListAdapter<ItemPlaceUiModel, ItemPlaceLayoutBinding>(PlaceItemDiffUtil()) {
 
     override fun createBinding(parent: ViewGroup, viewType: Int): ItemPlaceLayoutBinding =
@@ -21,6 +21,7 @@ class PlacesListAdapter :
 
     override fun bind(binding: ItemPlaceLayoutBinding, item: ItemPlaceUiModel) {
         binding.uiModel = item
+        binding.presenter = presenter
     }
 }
 

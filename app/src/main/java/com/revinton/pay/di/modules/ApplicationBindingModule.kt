@@ -1,5 +1,6 @@
 package com.revinton.pay.di.modules
 
+import com.revinton.pay.ui.create_reservation.CreateReservationFragment
 import com.revinton.pay.ui.favorites.FavoritesFragment
 import com.revinton.pay.ui.places.PlacesFragment
 import com.revinton.pay.ui.main.MainActivity
@@ -29,4 +30,7 @@ interface ApplicationBindingModule {
 
     @ContributesAndroidInjector
     fun reservationsFragment(): ReservationsFragment
+
+    @ContributesAndroidInjector
+    fun createReservationFragment(): CreateReservationFragment
 }

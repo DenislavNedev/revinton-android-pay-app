@@ -7,7 +7,12 @@
     <fragment
         android:id="@+id/places"
         android:name="com.revinton.pay.ui.places.PlacesFragment"
-        android:label="PlacesFragment" />
+        android:label="PlacesFragment">
+        <action
+            android:id="@+id/action_places_to_createReservationFragment"
+            app:destination="@id/createReservationFragment"
+            app:popUpTo="@id/places" />
+    </fragment>
     <fragment
         android:id="@+id/profile"
         android:name="com.revinton.pay.ui.profile.ProfileFragment"
@@ -25,5 +30,9 @@
         android:name="com.revinton.pay.ui.reservations.ReservationsFragment"
         android:label="ReservationsFragment" />
 
+    <fragment
+        android:id="@+id/createReservationFragment"
+        android:name="com.revinton.pay.ui.create_reservation.CreateReservationFragment"
+        android:label="CreateReservationFragment" />
 
 </navigation>

@@ -2,6 +2,7 @@
     <string name="app_name">RevintonPay</string>
     <string name="places">Places</string>
     <string name="reservations">Reservations</string>
+    <string name="reservation">Reservation</string>
     <string name="profile">Profile</string>
     <string name="favorites">Favorites</string>
     <string name="notifications">Notifications</string>

@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.revinton.pay.R
 import com.revinton.pay.databinding.PlacesFragmentBinding
+import com.revinton.pay.navigation.navigateTo
 import dagger.android.support.DaggerFragment
 import kotlinx.android.synthetic.main.places_fragment.*
 import javax.inject.Inject
@@ -21,7 +22,7 @@ class PlacesFragment : DaggerFragment() {
     private val viewModel: PlacesViewModel by activityViewModels { viewModelFactory }
 
     private lateinit var binding: PlacesFragmentBinding
-    private val placesListAdapter by lazy { PlacesListAdapter() }
+    private val placesListAdapter by lazy { PlacesListAdapter(viewModel) }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -42,12 +43,19 @@ class PlacesFragment : DaggerFragment() {
         super.onActivityCreated(savedInstanceState)
         initRecyclerView()
         observeUiModel()
+        observeNavigation()
     }
 
     private fun observeUiModel() {
         viewModel.uiModel.observe(viewLifecycleOwner, {
             binding.uiModel = it
             placesListAdapter.submitList(it.listOfPlaces)
+        })
+    }
+
+    private fun observeNavigation() {
+        viewModel.navigation.observe(viewLifecycleOwner, {
+            requireActivity().navigateTo(it)
         })
     }
 

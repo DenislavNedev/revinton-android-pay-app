@@ -26,12 +26,18 @@ class MainActivity : DaggerAppCompatActivity() {
             )
 
             navController.addOnDestinationChangedListener { _, destination, _ ->
+                bottom_navigation.visibility = View.VISIBLE
                 when (destination.id) {
                     R.id.places -> toolbar.visibility = View.GONE
                     R.id.favorites -> toolbar.visibility = View.GONE
                     R.id.notifications -> toolbar.visibility = View.GONE
                     R.id.profile -> toolbar.visibility = View.GONE
                     R.id.reservations -> toolbar.visibility = View.GONE
+                    R.id.createReservationFragment -> {
+                        bottom_navigation.visibility = View.GONE
+                        toolbar.visibility = View.VISIBLE
+                        toolbar.title = getString(R.string.reservation)
+                    }
                 }
             }
         }
