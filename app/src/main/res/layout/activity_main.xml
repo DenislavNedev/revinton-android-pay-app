@@ -25,6 +25,7 @@
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@id/bottom_navigation"
         android:layout_below="@id/app_bar_layout"
         app:defaultNavHost="true"
         app:navGraph="@navigation/nav_graph" />
@@ -39,11 +40,5 @@
         app:itemTextColor="@color/bottom_navigation_color_ion"
         app:labelVisibilityMode="labeled"
         app:menu="@menu/bottom_navigation_menu" />
-
-    <!--TODO create selectors for this-->
-    <!--    app:itemIconTint=""-->
-    <!--    app:itemTextColor=""-->
-    <!--    Selector for border-->
-    <!--    app:itemBackground="@drawable/bottom_navigation_item_background"-->
 
 </RelativeLayout>
