@@ -1,6 +1,7 @@
 package com.revinton.pay.ui.main
 
 import android.os.Bundle
+import android.view.View
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
@@ -16,7 +17,9 @@ class MainActivity : DaggerAppCompatActivity() {
     }
 
     private fun initNavController() {
+
         findNavController(R.id.nav_host_fragment).let { navController ->
+            bottom_navigation.setupWithNavController(navController)
             toolbar.setupWithNavController(
                 navController,
                 AppBarConfiguration(findNavController(R.id.nav_host_fragment).graph)
@@ -24,7 +27,11 @@ class MainActivity : DaggerAppCompatActivity() {
 
             navController.addOnDestinationChangedListener { _, destination, _ ->
                 when (destination.id) {
-
+                    R.id.places -> toolbar.visibility = View.GONE
+                    R.id.favorites -> toolbar.visibility = View.GONE
+                    R.id.notifications -> toolbar.visibility = View.GONE
+                    R.id.profile -> toolbar.visibility = View.GONE
+                    R.id.reservations -> toolbar.visibility = View.GONE
                 }
             }
         }

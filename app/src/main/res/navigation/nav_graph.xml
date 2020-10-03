@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/places">
+
+    <fragment
+        android:id="@+id/places"
+        android:name="com.revinton.pay.ui.places.PlacesFragment"
+        android:label="PlacesFragment" />
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.revinton.pay.ui.profile.ProfileFragment"
+        android:label="ProfileFragment" />
+    <fragment
+        android:id="@+id/favorites"
+        android:name="com.revinton.pay.ui.favorites.FavoritesFragment"
+        android:label="FavoritesFragment" />
+    <fragment
+        android:id="@+id/notifications"
+        android:name="com.revinton.pay.ui.notifications.NotificationsFragment"
+        android:label="NotificationsFragment" />
+    <fragment
+        android:id="@+id/reservations"
+        android:name="com.revinton.pay.ui.reservations.ReservationsFragment"
+        android:label="ReservationsFragment" />
+
 
 </navigation>
