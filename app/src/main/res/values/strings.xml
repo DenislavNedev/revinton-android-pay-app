@@ -6,4 +6,8 @@
     <string name="favorites">Favorites</string>
     <string name="notifications">Notifications</string>
     <string name="welcome_message">Welcome, %1$s</string>
+    <string name="payment_methods">PAYMENT METHODS</string>
+    <string name="connections">CONNECTIONS</string>
+    <string name="history">HISTORY</string>
+    <string name="settings">SETTINGS</string>
 </resources>

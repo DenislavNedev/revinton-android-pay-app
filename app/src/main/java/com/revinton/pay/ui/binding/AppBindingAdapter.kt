@@ -22,20 +22,19 @@ object AppBindingAdapter {
     @BindingAdapter("setWelcomeMessage")
     fun setWelcomeMessage(
         view: TextView,
-        username: String
+        username: String?
     ) {
-        view.text = view.context.getString(R.string.welcome_message, username)
+        if (username != null) {
+            view.text = view.context.getString(R.string.welcome_message, username)
+        }
     }
-
 
     @BindingAdapter("setImageFromUrl")
     fun setImageFromUrl(
         view: ImageView,
-        url: String
+        url: String?
     ) {
-
-
-        if (url != EMPTY_STRING) {
+        if (url != EMPTY_STRING && url != null) {
             //TODO add placeholder
             Picasso.get()
                 .load(url)

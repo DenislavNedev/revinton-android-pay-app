@@ -1,19 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
+        <variable
+            name="uiModel"
+            type="com.revinton.pay.ui.profile.ProfileUiModel" />
+
+        <variable
+            name="presenter"
+            type="com.revinton.pay.ui.profile.ProfilePresenter" />
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background_color"
+        android:gravity="center"
         android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!--        TODO Remove ic_settings-->
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="16dp"
+            android:onClick="@{() -> presenter.showQrCode()}"
+            android:src="@drawable/ic_settings"
+            app:setImageFromUrl="@{uiModel.currentImageUrl}" />
+
+        <!--        TODO Remove hardcoded text-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/name_bottom_border"
+            android:gravity="center"
+            android:paddingBottom="16dp"
+            android:text="John Smith"
+            android:textColor="@color/colorWhite"
+            android:textSize="30sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Profile" />
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:drawablePadding="16dp"
+            android:onClick="@{() -> presenter.openPaymentMethods()}"
+            android:text="@string/payment_methods"
+            android:textColor="@color/colorWhite"
+            android:textSize="24sp"
+            app:drawableStartCompat="@drawable/ic_payments_method" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:drawablePadding="16dp"
+            android:text="@string/connections"
+            android:textColor="@color/colorWhite"
+            android:textSize="24sp"
+            app:drawableStartCompat="@drawable/ic_connections" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:drawablePadding="16dp"
+            android:text="@string/history"
+            android:textColor="@color/colorWhite"
+            android:textSize="24sp"
+            app:drawableStartCompat="@drawable/ic_history" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:drawablePadding="16dp"
+            android:text="@string/settings"
+            android:textColor="@color/colorWhite"
+            android:textSize="24sp"
+            app:drawableStartCompat="@drawable/ic_settings" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
     </LinearLayout>
 </layout>
