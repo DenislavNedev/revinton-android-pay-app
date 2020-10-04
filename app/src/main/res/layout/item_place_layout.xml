@@ -22,7 +22,7 @@
             android:layout_height="200dp"
             android:clickable="true"
             android:focusable="true"
-            android:onClick="@{() -> presenter.createReservation(uiModel.id)}"
+            android:onClick="@{() -> presenter.createReservation(uiModel.id, uiModel.placeName, uiModel.placeImageUrl)}"
             android:orientation="vertical">
 
             <ImageView

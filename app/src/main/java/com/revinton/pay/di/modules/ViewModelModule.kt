@@ -2,6 +2,7 @@ package com.revinton.pay.di.modules
 
 import androidx.lifecycle.ViewModel
 import com.revinton.pay.di.ViewModelKey
+import com.revinton.pay.ui.create_reservation.CreateReservationViewModel
 import com.revinton.pay.ui.places.PlacesViewModel
 import com.revinton.pay.ui.profile.ProfileViewModel
 import dagger.Binds
@@ -20,4 +21,9 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(ProfileViewModel::class)
     abstract fun bindProfileViewModel(viewModel: ProfileViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(CreateReservationViewModel::class)
+    abstract fun bindCreateReservationViewModel(viewModel: CreateReservationViewModel): ViewModel
 }

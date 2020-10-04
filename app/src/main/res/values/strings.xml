@@ -11,4 +11,9 @@
     <string name="connections">CONNECTIONS</string>
     <string name="history">HISTORY</string>
     <string name="settings">SETTINGS</string>
+    <string name="pick_date_and_time">PICK DATE AND TIME</string>
+    <string name="special_offers">SPECIAL OFFERS</string>
+    <string name="add_people">ADD PEOPLE</string>
+    <string name="open">OPEN</string>
+    <string name="only_me">ONLY ME</string>
 </resources>

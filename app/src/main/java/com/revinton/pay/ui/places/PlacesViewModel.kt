@@ -9,6 +9,8 @@ import com.revinton.pay.R
 import com.revinton.pay.navigation.GraphNavigation
 import com.revinton.pay.navigation.NavigateTo
 import com.revinton.pay.utils.Constants.RESERVATION_PLACE_ID_KEY
+import com.revinton.pay.utils.Constants.RESERVATION_PLACE_IMAGE_URL_KEY
+import com.revinton.pay.utils.Constants.RESERVATION_PLACE_NAME_KEY
 import com.revinton.pay.utils.SingleLiveEvent
 import javax.inject.Inject
 
@@ -25,17 +27,21 @@ class PlacesViewModel @Inject constructor(application: Application) :
         get() = _navigation
 
     init {
-        _uiModel.value = PlacesUiModel(listOf(ItemPlaceUiModel("dsadas").apply {
-            placeImageUrl = "sadeads"
-            placeAddress = "dsadea"
-            placeName = "sdadeasdeas"
-        }))
+//        _uiModel.value = PlacesUiModel()
     }
 
-    override fun createReservation(placeId: String) {
+    override fun createReservation(
+        placeId: String,
+        placeName: String,
+        placeImageUrl: String
+    ) {
         _navigation.value = GraphNavigation(
             R.id.action_places_to_createReservationFragment,
-            bundleOf(RESERVATION_PLACE_ID_KEY to placeId)
+            bundleOf(
+                RESERVATION_PLACE_ID_KEY to placeId,
+                RESERVATION_PLACE_IMAGE_URL_KEY to placeImageUrl,
+                RESERVATION_PLACE_NAME_KEY to placeName
+            )
         )
     }
 }

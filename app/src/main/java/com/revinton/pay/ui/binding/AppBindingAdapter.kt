@@ -1,12 +1,15 @@
 package com.revinton.pay.ui.binding
 
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.TimePicker
 import androidx.annotation.StringRes
 import androidx.databinding.BindingAdapter
 import com.revinton.pay.R
 import com.revinton.pay.utils.Constants.EMPTY_STRING
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.create_reservation_fragment.*
 
 object AppBindingAdapter {
     @BindingAdapter("setTextResource")
@@ -41,6 +44,27 @@ object AppBindingAdapter {
                 .fit()
                 .centerCrop()
                 .into(view)
+        }
+    }
+
+    @BindingAdapter("set24hoursFormat")
+    fun set24hoursFormat(
+        timePicker: TimePicker,
+        is24hoursFormat: Boolean
+    ) {
+        timePicker.setIs24HourView(is24hoursFormat)
+    }
+
+    @BindingAdapter("setQuantityToOffer")
+    fun setQuantityToOffer(
+        view: TextView,
+        number: Int
+    ) {
+        if (number == 0) {
+            view.visibility = View.GONE
+        } else {
+            view.visibility = View.VISIBLE
+            view.text = number.toString()
         }
     }
 }
