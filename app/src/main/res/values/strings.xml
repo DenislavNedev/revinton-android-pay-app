@@ -16,4 +16,5 @@
     <string name="add_people">ADD PEOPLE</string>
     <string name="open">OPEN</string>
     <string name="only_me">ONLY ME</string>
+    <string name="tap_to_add_friends">Tap to add friends</string>
 </resources>

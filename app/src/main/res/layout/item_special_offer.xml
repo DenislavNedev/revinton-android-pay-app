@@ -38,7 +38,6 @@
             android:layout_height="150dp"
             android:layout_margin="12dp"
             app:cardCornerRadius="15dp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -51,12 +50,12 @@
                 <ImageView
                     android:id="@+id/imageView"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_history"
+                    android:layout_height="match_parent"
                     app:layout_constraintBottom_toTopOf="@+id/linearLayout"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:setImageFromUrl="@{uiModel.offerImageUrl}" />
 
                 <LinearLayout
                     android:id="@+id/linearLayout"
@@ -90,13 +89,15 @@
         </androidx.cardview.widget.CardView>
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="12dp"
+            android:gravity="center"
+            android:maxLines="4"
             android:text="@{uiModel.offerName}"
             android:textColor="@color/colorWhite"
-            android:textSize="14sp"
+            android:textSize="17sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
