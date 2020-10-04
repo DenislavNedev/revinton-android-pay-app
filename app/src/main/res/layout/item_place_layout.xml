@@ -37,14 +37,15 @@
 
             <TextView
                 android:id="@+id/textView"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="12dp"
+                android:background="@color/colorTextBackground"
                 android:shadowColor="@color/colorPrimaryDark"
-                android:shadowDx="-2"
-                android:shadowDy="-2"
-                android:shadowRadius="1"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="2"
                 android:text="@{uiModel.placeName}"
                 android:textColor="@color/colorWhite"
                 android:textSize="22sp"
@@ -53,10 +54,11 @@
 
             <TextView
                 android:id="@+id/address"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginBottom="16dp"
+                android:background="@color/colorTextBackground"
                 android:shadowColor="@color/colorPrimaryDark"
                 android:shadowDx="-2"
                 android:shadowDy="-2"

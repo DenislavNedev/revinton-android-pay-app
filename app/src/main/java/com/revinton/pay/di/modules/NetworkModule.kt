@@ -1,5 +1,7 @@
 package com.revinton.pay.di.modules
 
+import com.revinton.pay.network.PlacesApiService
+import com.revinton.pay.utils.Constants.API_URL
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -42,14 +44,13 @@ class NetworkModule {
         client: OkHttpClient
     ): Retrofit = Retrofit.Builder()
         .addConverterFactory(MoshiConverterFactory.create(moshi))
-        .baseUrl(" ")
+        .baseUrl(API_URL)
         .client(client)
         .build()
 
-// TODO when ApiService is needed uncomment this section
-//    @Singleton
-//    @Provides
-//    fun provideRevintonApiService(@Named("revintonRetrofit") retrofit: Retrofit): ApiService =
-//        retrofit.create(ApiService::class.java)
-//
+    @Singleton
+    @Provides
+    fun providePlacesApiService(@Named("revintonRetrofit") retrofit: Retrofit): PlacesApiService =
+        retrofit.create(PlacesApiService::class.java)
+
 }
