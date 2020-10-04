@@ -124,11 +124,10 @@
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="150dp"
-                        android:layout_height="130dp"
+                        android:layout_height="150dp"
                         android:layout_marginStart="12dp"
                         android:layout_marginEnd="12dp"
                         app:cardCornerRadius="15dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
@@ -196,7 +195,14 @@
                         android:textColor="@color/colorWhite"
                         android:textSize="22sp" />
                 </RadioGroup>
-                <!--TODO add complete button-->
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:text="@string/complete"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="24sp" />
             </LinearLayout>
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
     </ScrollView>
